@@ -1,0 +1,26 @@
+extends layout
+block content
+  
+    section.container
+       h1 Edit post       
+      
+       form(action="/posts/edit/"+ post.id enctype="multipart/form-data" method="POST" )
+            label(for="title") title
+            input(type="text" name="title" value=post.title)
+            label(for="description") add a description
+            textarea(name="description")=post.description
+            label(for="cover") add a cover
+            input(type="file" id="cover" name="cover")
+            input(type="hidden" name="hidden" value=post.thumb)
+
+            div.covers-comparison 
+                div.preview           
+                    p current cover image
+                    img( src="../../"+ post.thumb)  
+            
+                div.new-preview
+                    p new image as cover
+                    img(src="../../images/not_found.jpg" id="new-cover")
+
+            input(type="submit" value="Update post")
+       

@@ -1,0 +1,50 @@
+doctype html
+html
+  head  
+    title nodemysql
+    link(rel="stylesheet" href="/css/main.css")
+    link(href="https://fonts.googleapis.com/css?family=Abril+Fatface|Varela+Round" rel="stylesheet")
+    
+  body
+    nav
+      p.menu Menu &#9776;
+      ul
+        
+        li
+          h2 Node + MYSQL 
+          
+        li
+          a(href="/") Home
+        li
+          a(href="/index") Posts
+        
+        ul.inner
+          if (!isAuthenticated)
+                    
+            li
+              a(href="/users/register") Register
+            li
+              a(href="/users/login") Login  
+          else
+           
+            li
+              a(href="/user/profile") Dashboard
+            li
+              a(href="/users/logout") LogOut  
+
+            li
+              p You are now signed in
+    header      
+    block content
+     
+      
+      
+  
+    footer
+      p Simple node and mysql app blog
+      p made by aldocaava    
+    
+  script(src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous")
+  script(src="/js/main.js")           

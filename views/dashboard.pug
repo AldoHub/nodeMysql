@@ -1,0 +1,13 @@
+extends layout
+block content
+   
+    section.container
+        img(class="profile-img" src="../"+ user.avatar)
+                
+        if (user != undefined)
+            h1=user.username
+            h4=user.email
+            p= "UserID: " + user.id    
+        p
+            a(href="/addpost" class="newPost") +
+

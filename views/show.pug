@@ -1,0 +1,23 @@
+extends layout
+block content
+  
+      
+    section.container
+        h1=post.title
+        p= "by " + user.username    
+
+        if (isAuthenticated)
+            if(x != null || x != undefined)
+                if (x == post.author)
+                    div.show-menu
+                        a(class="show-links" href="/posts/edit/" + post.id) Edit the post
+                        a(class="show-links" href="/posts/delete/"+ post.id) Delete this post 
+        img(class="show-cover" src="../"+ post.thumb)
+        p=post.description
+
+        a(class="newPost" href="/addpost") + 
+
+
+       
+
+  

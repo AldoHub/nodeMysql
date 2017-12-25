@@ -1,7 +1,7 @@
 
 $(function(){
    //on load check if the window is determined size
-    if(window.innerWidth < 651 ){
+    if(window.innerWidth < 729 ){
         $(".menu").next("UL").slideUp();
     }else{
         
@@ -13,7 +13,7 @@ $(function(){
 
     //check if the window is determined height and react on resize 
     $(window).on("resize", ()=>{
-        if(window.innerWidth < 651 ){
+        if(window.innerWidth < 729 ){
             $(".menu").next("UL").slideUp();
         }else{
             $(".menu").next("UL").slideDown();

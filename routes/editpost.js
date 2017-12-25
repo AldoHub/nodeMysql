@@ -11,10 +11,19 @@ const upload= require("../multer/multer");
 router.get("/posts/edit/:id", authMiddleware(),(req,res, next)=>{
     
     let $id= req.params.id;
+    let $requestId ="";
     //user must be login so the variable shouldnt be null or undefined
-    let $requestId = req.session.passport.user.user_id;
-    console.log("REQUEST");    
+    //NOTE: after first registering user_id variable wont be set
+    //lets check and assign the passport user value if needed
+    if(req.session.passport.user.user_id == null){
+       $requestId= req.session.passport.user; 
+    }else{
+       $requestId = req.session.passport.user.user_id;
+    }
+    console.log("DATA AFTER USER MANUALLY LOGIN");    
     console.log($requestId);
+    console.log("PASSPORT USER AFTER REGISTERING:");
+    console.log(req.session.passport.user);
     
     //we need to find the posts author only
     let $sqlAuthor= "SELECT author FROM nodemysql.posts WHERE id= ?";

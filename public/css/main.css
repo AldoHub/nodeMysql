@@ -1,6 +1,6 @@
 
 body {
-    background: #fff;
+    background: #222;
     color: #111;
     margin: 0 auto;
     width: 100%;
@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background: url("/images/girl_sitting_on_pier_blurred-min.png")fixed bottom center;
+    background: url("/images/girl_sitting_on_pier_blurred-min.png")fixed;
     background-size:100%; 
     background-repeat: no-repeat;
     height: 60vh
@@ -33,13 +33,12 @@ header h1 {
 }
 
 nav {
-    background: #222;
-    position: fixed;
+    background: #333;
     width: 100%;
     padding: 0;
-    text-align: center;
+   
+    position: relative;
     margin: 0;
-    left: 0;
     z-index: 99;
     
 }
@@ -53,12 +52,13 @@ nav ul li {
     margin: 0;
 }
 nav ul li h2{
+   
    width: 100%;
    display: inline-table;
   margin: 0 10px 0 0;
   font-size: 20px;
   text-transform: uppercase;
-  text-indent: 0px;
+  text-indent: 10px;
   font-family: "Abril Fatface", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 color: #CC0557;
 
@@ -68,7 +68,7 @@ color: #CC0557;
 nav ul li a {
     padding: 10px;
     display: block;
-    color: #333;
+    color: #555;
     text-decoration: none;
 }
 
@@ -142,7 +142,7 @@ footer p {
     background: #eee;
     text-align: center;
     border-top:5px solid aliceblue;
-    margin: -90px auto 50px auto;
+    margin: 0px auto 0px auto;
     box-shadow: 0 10px 15px #222;
     
 }
@@ -311,10 +311,10 @@ nav .inner {
 }
 
 
-@media (min-width:481px) and (max-width:650px) {
+@media (min-width:481px) and (max-width:730px) {
     header {
         background-position: top;
-        height: 50vh;
+        height: 30vh;
     }
     .menu {
         
@@ -331,13 +331,24 @@ nav .inner {
     .pins-container{
         column-count: 1;
     }
+    nav {
+        position: fixed;
+    }
+
+    nav ul li h2{
+        padding: 0;
+        margin: 0;
+    }
     nav ul li h2 {
         text-align: center;
         
     }
    
     nav ul {
-        display: block;
+        position: absolute;
+        width: 100%;
+        background: #222;
+        
     }
 
 
@@ -363,6 +374,9 @@ nav .inner {
 
 @media (min-width:0px) and (max-width:480px){
     
+    nav {
+        position: fixed;
+    }
     .menu {
 
         display: inline-table;
@@ -374,14 +388,16 @@ nav .inner {
         color: #eee;
       
     }
-    
+   
     nav ul li h2 {
         text-align: center;
-        
+        margin: 0;
     }
    
     nav ul {
-        display: block;
+        position: absolute;
+        width: 100%;
+        background: #222;
     }
 
 
@@ -404,7 +420,7 @@ nav .inner {
     
     header {
         background-position: top;
-        height: 30vh;
+        height: 20vh;
     }
 
     .container{
